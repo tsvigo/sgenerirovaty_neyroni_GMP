@@ -24,8 +24,8 @@ mpz_class generateRandomMPZ() {
     qint64 signedRandomValue = static_cast<qint64>(randomValue);
     return mpz_class(std::to_string(signedRandomValue));
 }
-
-void writeNumbersToFile(const QList<mpz_class>& numbers) {
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+void writeNumbersToFile(const QList<mpz_class>& numbers) { // этот надо заменить
     QFile file(FILE_NAME);
     if (!file.open(QIODevice::WriteOnly)) {
         std::cerr << "Failed to open file for writing" << std::endl;
@@ -38,7 +38,7 @@ void writeNumbersToFile(const QList<mpz_class>& numbers) {
     }
     file.close();
 }
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 QList<mpz_class> readNumbersFromFile() {
     QList<mpz_class> numbers;
     QFile file(FILE_NAME);
